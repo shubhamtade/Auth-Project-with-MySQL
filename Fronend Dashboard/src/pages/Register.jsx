@@ -11,11 +11,14 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/register", {
-        name,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://auth-project-with-mysql.onrender.com/register",
+        {
+          name,
+          email,
+          password,
+        }
+      );
       navigate("/login");
     } catch (error) {
       setMessage("Error registering user");

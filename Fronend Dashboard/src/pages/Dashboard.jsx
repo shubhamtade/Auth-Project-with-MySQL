@@ -21,9 +21,12 @@ function Dashboard() {
 
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/dashboard", {
-          headers: { Authorization: token },
-        });
+        const response = await axios.get(
+          "https://auth-project-with-mysql.onrender.com/dashboard",
+          {
+            headers: { Authorization: token },
+          }
+        );
         setUser(response.data);
       } catch (error) {
         setMessage("Error fetching user data");
